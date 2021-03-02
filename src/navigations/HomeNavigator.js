@@ -1,52 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
+import { CONTACT_DETAILS, CONTACT_LIST, CREATE_CONTACT, SETTINGS } from '../constants/routeNames';
+import Contacts from '../screens/contacts';
+import ContactDetails from '../screens/contact_details';
+import CreateContact from '../screens/create_contact';
+import Settings from '../screens/settings';
 
-const Contacts = () => {
-    return (
-        <View>
-            <Text>
-                HELLO
-            </Text>
-        </View>
-    )
-}
-const ContactDetails = () => {
-    return (
-        <View>
-            <Text>
-                HELLO
-            </Text>
-        </View>
-    )
-}
-const CreateContact = () => {
-    return (
-        <View>
-            <Text>
-                HELLO
-            </Text>
-        </View>
-    )
-}
-const Settings = () => {
-    return (
-        <View>
-            <Text>
-                HELLO
-            </Text>
-        </View>
-    )
-}
 
 const HomeNavigator = () => {
     const HomeStack = createStackNavigator();
     return (
-        <HomeStack.Navigator initialRouteName="Contacts">
-            <HomeStack.Screen name="Contacts" component={Contacts}></HomeStack.Screen>
-            <HomeStack.Screen name="Contact Details" component={ContactDetails}></HomeStack.Screen>
-            <HomeStack.Screen name="Create Contact" component={CreateContact}></HomeStack.Screen>
-            <HomeStack.Screen name="Settings" component={Settings}></HomeStack.Screen>
+        <HomeStack.Navigator initialRouteName={CONTACT_LIST}>
+            <HomeStack.Screen name={CONTACT_LIST} component={Contacts}></HomeStack.Screen>
+            <HomeStack.Screen name={CONTACT_DETAILS} component={ContactDetails}></HomeStack.Screen>
+            <HomeStack.Screen name={CREATE_CONTACT} component={CreateContact}></HomeStack.Screen>
+            <HomeStack.Screen name={SETTINGS} component={Settings}></HomeStack.Screen>
         </HomeStack.Navigator>
     
     )
